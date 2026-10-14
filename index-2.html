@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Написать Артёму</title>
+<style>
+:root{--bg:#0B0B10;--fg:#FFFFFF;--mut:#B8B8C6;--card:#16161F;--c1:#7DF9FF;--c2:#B28DFF;--c3:#FF8AD8;--c4:#FFE29A;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--bg:#F4F2FA;--fg:#14141C;--mut:#55556A;--card:#FFFFFF}}
+:root[data-theme="light"]{--bg:#F4F2FA;--fg:#14141C;--mut:#55556A;--card:#FFFFFF}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+main{max-width:480px;margin:0 auto;padding:36px 22px 40px}
+.tag{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;letter-spacing:2px;color:var(--c1)}
+h1{font-size:34px;line-height:1.1;margin:14px 0 10px;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;color:var(--mut);margin:0 0 22px}
+p{color:var(--mut);font-size:17px;line-height:1.5;margin:0 0 24px}
+a.b{display:flex;align-items:center;justify-content:space-between;text-decoration:none;color:var(--fg);background:var(--card);border:2px solid var(--c2);border-radius:18px;padding:18px 20px;margin-bottom:14px;font-size:19px;font-weight:700}
+a.b:nth-of-type(2){border-color:var(--c3)}a.b:nth-of-type(3){border-color:var(--c4)}a.b:active{transform:scale(.98)}
+a.b span{font-weight:500;font-size:14px;color:var(--mut)}
+.note{margin-top:22px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;color:var(--c4)}
+</style>
+</head>
+<body>
+<main>
+<div class="tag">[ ИДЕИ НА СВЯЗИ ]</div>
+<h1>Привет! Я Артём</h1>
+<div class="sub">Артём Широков · будущий специалист по рекламе</div>
+<p>Делаю рекламу, которую хочется досмотреть до конца. Люблю смелые идеи и дружеские разговоры.</p>
+<p>Не прочь подружиться и помочь с чем-нибудь тоже. Расскажи, что тебе нужно, а я подумаю, чем смогу быть полезен.</p>
+<p style="margin-bottom:14px;color:var(--fg);font-weight:700">Где тебе удобнее написать?</p>
+<a class="b" href="https://t.me/MrArtemit999" onclick="return go('tg://resolve?domain=MrArtemit999',this.href)">Telegram <span>открыть чат →</span></a>
+<a class="b" href="https://wa.me/79234205096" onclick="return go('whatsapp://send?phone=79234205096',this.href)">WhatsApp <span>открыть чат →</span></a>
+<a class="b" href="https://vk.com/im?sel=822905937">ВКонтакте <span>открыть чат →</span></a>
+<div class="note">// на звонки почти не отвечаю — лучше пиши в чат</div>
+</main>
+<script>
+function go(app,web){
+  var t=Date.now(),opened=false;
+  function h(){ if(document.hidden) opened=true; }
+  document.addEventListener('visibilitychange',h);
+  window.location.href=app;
+  setTimeout(function(){ if(!opened && !document.hidden){ window.location.href=web; } },1500);
+  return false;
+}
+</script>
+</body>
+</html>
